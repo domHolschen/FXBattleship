@@ -61,7 +61,7 @@ public class Main extends Application {
             public void handle(MouseEvent clickEvent) {
                 int clickedTileX = (int) Math.floor(clickEvent.getSceneX() / 64);
                 int clickedTileY = (int) Math.floor(clickEvent.getSceneY() / 64);
-                if (gameBoard.getTileId(clickedTileX, clickedTileY) <= 1 && gameBoard.getIsActive() == true) {
+                if (gameBoard.getTileId(clickedTileX, clickedTileY) <= 1 && gameBoard.getIsActive() == true && clickedTileY <= 9) {
                     tileSetter(gameBoard, gameBoard.getTileId(clickedTileX, clickedTileY) + 2, clickedTileX, clickedTileY);
                     gameBoard.addMissiles(-1);
                     int checkShipsSunk = 0;
